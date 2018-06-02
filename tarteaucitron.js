@@ -219,10 +219,10 @@ var tarteaucitron = {
     "load": function () {
         "use strict";
         var cdn = tarteaucitron.cdn,
-            language = tarteaucitron.getLanguage(),
-            pathToLang = cdn + 'lang/tarteaucitron.' + language + '.js?v=' + tarteaucitron.version,
+            // language = tarteaucitron.getLanguage(),
+            // pathToLang = cdn + 'lang/tarteaucitron.' + language + '.js?v=' + tarteaucitron.version,
             pathToServices = cdn + 'tarteaucitron.services.js?v=' + tarteaucitron.version,
-            linkElement = document.createElement('link'),
+            // linkElement = document.createElement('link'),
             defaults = {
                 "adblocker": false,
                 "hashtag": '#tarteaucitron',
@@ -245,15 +245,15 @@ var tarteaucitron = {
         tarteaucitron.hashtag = defaults.hashtag;
         tarteaucitron.highPrivacy = defaults.highPrivacy;
 
-        // Step 1: load css
-        linkElement.rel = 'stylesheet';
-        linkElement.type = 'text/css';
-        linkElement.href = cdn + 'css/tarteaucitron.css?v=' + tarteaucitron.version;
-        document.getElementsByTagName('head')[0].appendChild(linkElement);
+        // Step 1: load css => NOW enqueued in PHP
+        // linkElement.rel = 'stylesheet';
+        // linkElement.type = 'text/css';
+        // linkElement.href = cdn + 'css/tarteaucitron.css?v=' + tarteaucitron.version;
+        // document.getElementsByTagName('head')[0].appendChild(linkElement);
 
-        // Step 2: load language and services
-        tarteaucitron.addScript(pathToLang, '', function () {
-            tarteaucitron.addScript(pathToServices, '', function () {
+        // Step 2: load lanague and services => NOW enqueued in PHP
+        // tarteaucitron.addScript(pathToLang, '', function () {
+        //     tarteaucitron.addScript(pathToServices, '', function () {
 
                 var body = document.body,
                     div = document.createElement('div'),
@@ -478,8 +478,8 @@ var tarteaucitron = {
                         }
                     }, 1500);
                 }
-            });
-        });
+            // });
+        // });
     },
     "addService": function (serviceId) {
         "use strict";
