@@ -954,7 +954,7 @@ var tarteaucitron = {
                     a = 'client';
                     e = document.documentElement || document.body;
                 }
-
+                
                 // height of the services list container
                 if (document.getElementById('tarteaucitron') !== null && document.getElementById('tarteaucitronClosePanel') !== null && document.getElementById('tarteaucitronMainLineOffset') !== null)
                 {
